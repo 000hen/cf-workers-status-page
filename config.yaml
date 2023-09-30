@@ -1,6 +1,6 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  title: 'nap.social Status'
+  url: 'https://status.nap.social' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
@@ -15,25 +15,18 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: nap-social # unique identifier
+    name: nap.social
+    url: 'https://nap.social' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
     linkable: true # allows the title to be a link, default=true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: nap-api
+    name: "nap.social API"
+    url: "https://nap.social/api/v2/instance"
     method: GET
-    expectStatus: 200
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
