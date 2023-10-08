@@ -5,14 +5,14 @@ settings:
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
-  monitorLabelNoData: 'No data'
-  dayInHistogramNoData: 'No data'
-  dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+  allmonitorsOperational: '所有服務正常運作 (All Systems Operational)'
+  notAllmonitorsOperational: '部分服務受阻 (Not All Systems Operational)'
+  monitorLabelOperational: '服務中 (Operational)'
+  monitorLabelNotOperational: '服務受阻 (Not Operational)'
+  monitorLabelNoData: '沒有資料 (No data)'
+  dayInHistogramNoData: '沒有資料 (No data)'
+  dayInHistogramOperational: '一切正常 (All good)'
+  dayInHistogramNotOperational: '件服務異常 (incident(s))' # xx incident(s) recorded
 
 monitors:
   - id: nap-social # unique identifier
@@ -26,6 +26,14 @@ monitors:
   - id: nap-api
     name: "nap.social API"
     url: "https://nap.social/api/v2/instance"
+    method: GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+  - id: nap-shorter
+    name: "NAP Shorter"
+    url: "https://nap.tw"
     method: GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
