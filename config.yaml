@@ -1,7 +1,7 @@
 settings:
   title: 'The NAP Platform Status'
   url: 'https://status.nap.social' # used for Slack messages
-  logo: logo-512x512.png # image in ./public/ folder
+  logo: logo-144x144.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
