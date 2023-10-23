@@ -1,6 +1,6 @@
 settings:
-  title: 'The NAP Platform Status'
-  url: 'https://status.nap.social' # used for Slack messages
+  title: 'SanZi Network Status'
+  url: 'https://status.sanzi.io' # used for Slack messages
   logo: logo-144x144.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
