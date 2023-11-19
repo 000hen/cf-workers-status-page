@@ -18,7 +18,7 @@ monitors:
   - id: nap-social # unique identifier
     name: nap.social
     url: 'https://nap.social' # URL to fetch
-    method: GET # default=GET
+    method: HEAD # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
@@ -26,7 +26,7 @@ monitors:
   - id: nap-api
     name: "nap.social API"
     url: "https://nap.social/api/v2/instance"
-    method: GET
+    method: HEAD
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
@@ -34,7 +34,7 @@ monitors:
   - id: nap-shorter
     name: "NAP Shorter"
     url: "https://nap.tw"
-    method: GET
+    method: HEAD
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
